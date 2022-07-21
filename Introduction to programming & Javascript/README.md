@@ -62,7 +62,73 @@ Assuming the current price is (1$ = 0.000043BTC)
 ### High-level
 <p>Are easier to read, write and maintain, developers dont have to worry in secondary things like register or memory management. They are also more independent of a specific computing system arquitecture.</p>
 
+<br>
+<br>
 
+## Date of birth in binary
+<p>Date of birth: 1999</p>
+
+| 2^10 | 2^9 | 2^8 | 2^7 | 2^6 | 2^5 | 2^4 | 2^3 | 2^2 | 2^1 | 2^0 |
+| ---- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1    | 1   | 1   | 1   | 1   | 0   | 0   | 1   | 1   | 1   | 1   |
+
+`Decimal`: 1999 
+`Binary`: 11111001011
+
+<br>
+<br>
+
+## language of MIPS Assembler 
+### Program 1
+Program that adds any two given numbers provided by the user
+
+```
+  .data
+	      number1: .asciiz "\nIngrese el primer numero: "
+	      number2: .asciiz "\nIngrese el segundo numero: "
+	      result_message: .asciiz "\nEl resultado es: "
+  .text
+	      main:
+              li $v0, 4
+              la $a0, number1
+              syscall
+
+              li $v0, 5
+              syscall
+
+              move $t0, $v0
+
+              li $v0, 4
+              la $a0, number2
+              syscall
+
+              li $v0, 5
+              syscall
+
+              move $t1, $v0
+              
+              add $t2, $t0, $t1
+
+               li $v0, 4
+              la $a0 result_message
+              syscall
+
+              li $v0, 1
+              move $a0, $t2
+              syscall
+
+```
+### Program 2
+Program that displays my name
+```
+    .data
+	      message: .asciiz "\My name is Carlos Manuel García Escalante "
+    .text
+	      main:
+              li $v0, 4
+              la $a0, message
+              syscall
+```
 
 
 
