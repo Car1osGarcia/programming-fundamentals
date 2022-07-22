@@ -6,6 +6,7 @@
 <br>
 <br>
 
+# Day 1
 ##  Interpreted And Compiled Programming Languages
 <br>
 
@@ -65,6 +66,7 @@ Assuming the current price is (1$ = 0.000043BTC)
 <br>
 <br>
 
+# Day 2
 ## Date of birth in binary
 <p>Date of birth: 1999</p>
 
@@ -130,5 +132,76 @@ Program that displays my name
               syscall
 ```
 
+# Day 3
+## Printing even numbers (javascript)
 
+<p>In this exercise i use an iterative flow control to be able to print all the even numbers in the range of numbers from 0 to 100.</p>
 
+```
+console.log('Even numbers 0 to 100')
+for (let i = 0; i <= 100; i++) {
+  if(i%2==0){
+    console.log(i)
+  }
+}
+
+```
+<br>
+
+## Bad code
+<p>The code shown below is not working in the right way, as a task i found the error made by the developer who programmed this code and correct it</p>
+
+```
+var cond = false;
+
+if ((cond = true)) {
+  console.log('The cond variable is true');
+} else {
+  console.log('The cond variable is false');
+}
+```
+<p>Correct code</p>
+If i want to compare i have to use == .
+
+```
+var cond = false;
+
+if ((cond == true)) {
+  console.log('The cond variable is true');
+} else {
+  console.log('The cond variable is false');
+}
+```
+<br>
+
+## Bad code
+<p>I must create the code that follows the following logic, if the given number is 100, take this number as special and show the following message: "This is a special number!", but if the number is less than 1000, multiple of 10 and different from 100, you must show the following message: "This number is almost special". if none of the given conditions are met show the following message: "Just a regular number". Another developer was trying to program the logic, but apparently couldn't, you need to fix the code to work properly</p>
+
+```
+var n = 100;
+
+if (n == 100) {
+  console.log('This is a special number!');
+}
+if (n < 1000) {
+  console.log('');
+} else {
+  console.log('Just a regular number');
+}
+if (n % 10 == 0) {
+  console.log('This number is multiple of 10');
+}
+```
+<p>Correct code</p>
+
+```
+var n = 10;
+
+if (n == 100) {
+  console.log('This is a special number!');
+}else if (n < 1000 && n % 10 == 0) {
+  console.log('This number is almost special');
+} else {
+  console.log('Just a regular number');
+}
+```
