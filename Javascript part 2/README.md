@@ -43,7 +43,7 @@ function likes(names) {
 
 <br>
 
-### Who likes it?
+### Bit Counting
 
 Exercise:
 Write a function that takes an integer as input, and returns the number of bits that are equal to one in the binary representation of that number. You can guarantee that input is non-negative.
@@ -63,25 +63,6 @@ var countBits = function(n) {
 ```
 <br>
 
-### Who likes it?
-
-Exercise:
-Write a function that takes an integer as input, and returns the number of bits that are equal to one in the binary representation of that number. You can guarantee that input is non-negative.
-
-Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
-
-```
-var countBits = function(n) {
-  // Program Me
-};
-```
-Solution:
-```
-var countBits = function(n) {
-  return n.toString(2).split("1").length-1;
-};
-```
-<br>
 
 ### Your order, please
 
@@ -119,5 +100,170 @@ function order(words){
   }
 }
 ```
+<br>
 
+# Day 2
+## Training with codewars 
+<br>
 
+### Simple Pig Latin
+
+Exercise:
+Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+
+```
+function pigIt(str){
+  //Code here
+}
+```
+Solution:
+```
+function pigIt(str){
+  let words= str.split(" ");
+  let sentence='';
+  let i=0
+  console.log(str);
+  for(; i<words.length-1; i++){
+    if(words[i].match('^[a-zA-Z]+$')){
+      sentence += words[i].substr(1,words[i].length)+words[i][0]+'ay ';
+    }else{
+      sentence += words[i];
+    }
+  }
+  if(words[i].match('^[a-zA-Z]+$')){
+      sentence += words[i].substr(1,words[i].length)+words[i][0]+'ay';
+  }else{
+      sentence += words[i];
+  }
+  return sentence;
+}
+```
+<br>
+
+### Count the number of Duplicates
+
+Exercise:
+Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+
+```
+function duplicateCount(text){
+  //...
+}
+```
+Solution:
+```
+function duplicateCount(text){
+  let txt = text.toLowerCase();
+  let con=0;
+  for(let i=0; i<txt.length; i++){
+    let letter= txt.charAt(i);
+    txt=txt.replace(letter, '');
+    if(txt.includes(letter)){
+      var re = new RegExp(letter,"g");
+      txt=txt.replace(re, ''); 
+      con++;
+      i=0;
+    }
+    
+  }
+  return con;
+}
+```
+
+<br>
+
+### Decode The Morse Code
+
+Exercise:
+In this kata you have to write a simple Morse code decoder. While the Morse code is now mostly superseded by voice and digital data communication channels, it still has its use in some applications around the world.
+The Morse code encodes every character as a sequence of "dots" and "dashes". For example, the letter A is coded as ·−, letter Q is coded as −−·−, and digit 1 is coded as ·−−−−. The Morse code is case-insensitive, traditionally capital letters are used. When the message is written in Morse code, a single space is used to separate the character codes and 3 spaces are used to separate words. For example, the message HEY JUDE in Morse code is ···· · −·−−   ·−−− ··− −·· ·.
+
+```
+decodeMorse = function(morseCode){
+  //your code here
+}
+```
+Solution:
+```
+decodeMorse = function(morseCode){
+
+  return morseCode
+          .trim()
+          .split("   ")
+          .map( word =>  word
+               .split(" ") 
+               .map(character => MORSE_CODE[character]) 
+               .join('')             
+          ).join(' ')
+           
+}
+```
+
+<br>
+
+### Valid Parentheses
+
+Exercise:
+Write a function that takes a string of parentheses, and determines if the order of the parentheses is valid. The function should return true if the string is valid, and false if it's invalid.
+
+```
+function validParentheses(parens) {
+  
+}
+```
+Solution:
+```
+function validParentheses(parens) {
+  let array=[];
+  for(let h=0; h<parens.length ;h++){
+    if(parens.charAt(h)===")" && array.length==0){
+      return false;
+    }else{
+      parens.charAt(h)==="(" ? array.push(".") : array.pop() 
+    }
+  }
+  return array.length==0 ?  true :  false
+}
+```
+
+<br>
+
+### Convert string to camel case
+
+Exercise:
+Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
+
+```
+function toCamelCase(str){     
+}
+```
+Solution:
+```
+function toCamelCase(str){
+  let word = str.split(/[-|_]/);
+  return word.map((w,i) =>{ 
+           return i==0 ? w.substr(0,w.length) : w.substr(0,1).toUpperCase()+w.substr(1,w.length); 
+          }).join('');
+     
+}
+```
+
+<br>
+
+### Unique In Order
+
+Exercise:
+Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
+
+```
+var uniqueInOrder=function(iterable){
+  //your code here - remember iterable can be a string or an array
+}
+```
+Solution:
+```
+var uniqueInOrder=function(iterable){
+  let array = typeof iterable=='string' ? iterable.split(''): iterable;
+  return array.filter((a,i)=> {return a!=array[i-1] ? a :null ; });
+}
+```
