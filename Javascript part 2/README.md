@@ -199,6 +199,8 @@ decodeMorse = function(morseCode){
 }
 ```
 
+# Day 3
+## Training with codewars 
 <br>
 
 ### Valid Parentheses
@@ -265,5 +267,69 @@ Solution:
 var uniqueInOrder=function(iterable){
   let array = typeof iterable=='string' ? iterable.split(''): iterable;
   return array.filter((a,i)=> {return a!=array[i-1] ? a :null ; });
+}
+```
+<br>
+
+# Day 3
+## Training with codewars 
+<br>
+
+### Fold an array
+
+Exercise:
+In this kata you have to write a method that folds a given array of integers by the middle x-times.
+
+```
+function foldArray(array, runs)
+{
+}
+```
+Solution:
+```
+function foldArray(array, runs)
+{
+  for(let i=0;i<runs; i++){
+    if(array.length%2==0){
+      let arrayN1=array.slice(0,(array.length/2));
+      let arrayN2=array.slice((array.length/2),array.length);
+      array=arrayN1.map((n,i)=>n+arrayN2[(arrayN2.length-i)-1]);
+    }else{
+      let arrayN1=array.slice(0,((array.length-1)/2));
+      let arrayN3=array[((array.length-1)/2)];
+      let arrayN2=array.slice((array.length/2)+1,array.length);
+      array=arrayN1.map((n,i)=>n+arrayN2[(arrayN2.length-i)-1]);
+      array.push(arrayN3);
+    }
+  }
+  
+  return array;
+}
+```
+
+<br>
+
+### Encrypt this!
+
+Exercise:
+Encrypt this!
+
+You want to create secret messages which can be deciphered by the Decipher this! kata. Here are the conditions:
+
+Your message is a string containing space separated words.
+You need to encrypt each word in the message using the following rules:
+The first letter must be converted to its ASCII code.
+The second letter must be switched with the last letter
+Keepin' it simple: There are no special characters in the input.
+
+```
+var encryptThis = function(text) {
+  // Implement me! :)
+}
+```
+Solution:
+```
+var encryptThis = function(text) {
+  return text.split(" ").map(a=>a.length==1?a.charCodeAt(0):a.length==2?a.charCodeAt(0)+a[1]:a.charCodeAt(0)+`${a[a.length-1]+a.substr(2,a.length-3)+a[1]}`).join(' ');
 }
 ```
