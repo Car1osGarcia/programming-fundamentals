@@ -16,14 +16,14 @@ You probably know the "like" system from Facebook and other pages. People can "l
 
 Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
 
-```
+```javascript
 function likes(names) {
   // TODO  
 }
 
 ```
 Solution:
-```
+```javascript
 function likes(names) {
   let str=''
   if(names.length==0){
@@ -50,13 +50,13 @@ Write a function that takes an integer as input, and returns the number of bits 
 
 Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
 
-```
+```javascript
 var countBits = function(n) {
   // Program Me
 };
 ```
 Solution:
-```
+```javascript
 var countBits = function(n) {
   return n.toString(2).split("1").length-1;
 };
@@ -73,13 +73,13 @@ Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
 
 If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
 
-```
+```javascript
 function order(words){
   // ...
 }
 ```
 Solution:
-```
+```javascript
 function order(words){
   if(words.length==0){
     return  "";
@@ -111,13 +111,13 @@ function order(words){
 Exercise:
 Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
 
-```
+```javascript
 function pigIt(str){
   //Code here
 }
 ```
 Solution:
-```
+```javascript
 function pigIt(str){
   let words= str.split(" ");
   let sentence='';
@@ -145,13 +145,13 @@ function pigIt(str){
 Exercise:
 Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
 
-```
+```javascript
 function duplicateCount(text){
   //...
 }
 ```
 Solution:
-```
+```javascript
 function duplicateCount(text){
   let txt = text.toLowerCase();
   let con=0;

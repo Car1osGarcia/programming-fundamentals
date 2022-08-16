@@ -14,7 +14,7 @@
 
 Syntax with an else clause
 
-```
+```javascript
 if (condition)
   statement1
 else
@@ -22,7 +22,7 @@ else
 ```
 example with a truthy condition:
 
-```
+```javascript
 let result;
 let a =2;
   if (a > 0) {
@@ -47,13 +47,13 @@ Result:
 - In final expression we could type a counter or expression that executes each iteration.
 
 Syntax:
-```
+```javascript
 for ([initialization]; [condition]; [final-expression])
   statement
 ```
 
 Example:
-```
+```javascript
 for (let i = 0; i < 4; i++) {
   console.log(i);
   // more statements
@@ -71,12 +71,12 @@ Result:
 <p>This statement creates a loop but it only needs a condition to continue iterating if is truthy.</p>
 
 Syntax:
-```
+```javascript
 while (condition)
   statement
 ```
 Example:
-```
+```javascript
 let n = 0;
 
 while (n < 4) {
@@ -97,13 +97,13 @@ Result:
 <p>This statement allows separate specific statement to call the function every time we need the statement beign executed.</p>
 
 Syntax:
-```
+```javascript
 function name(param0, param1, /* … ,*/ paramN) {
   statements
 }
 ```
 Example:
-```
+```javascript
 function calcMult(num1, num2) {
   return num1 * num2;
 }
@@ -130,14 +130,14 @@ Result:
 ### Multiply exercise
 Exercise:
 
-```
+```javascript
 function multiply(a, b){
   a * b
 }
 
 ```
 Solution:
-```
+```javascript
 function multiply(a, b){
  return a * b
 }
@@ -147,14 +147,14 @@ function multiply(a, b){
 Exercise:
 You'll be given a string, and have to return the sum of all characters as an int. The function should be able to handle all ASCII characters.
 
-```
+```javascript
 function uniTotal (string) {
 // total up dem unicodes!
 }
 
 ```
 Solution:
-```
+```javascript
 function uniTotal (string) {
   let suma=0;
   for (let i = 0; i < string.length; i++) {
@@ -173,14 +173,14 @@ function uniTotal (string) {
 Exercise:
 You'll be given a string, and have to return the sum of all characters as an int. The function should be able to handle all ASCII characters.
 
-```
+```javascript
 function getChar(c){
   // ...
 }
 ```
 
 Solution:
-```
+```javascript
 function getChar(c){
   return String.fromCharCode(c)
 }
@@ -192,14 +192,14 @@ Exercise:
 Implement a function that adds two numbers together and returns their sum in binary. The conversion can be done before, or after the addition.
 
 The binary number returned should be a string.
-```
+```javascript
 function addBinary(a,b) {
 
 }
 ```
 
 Solution:
-```
+```javascript
 function addBinary(a,b) {
   let sum=a+b;
   let strSum= sum.toString(2);
@@ -220,14 +220,14 @@ This function should return a number (final grade). There are four types of fina
 - 75, if a grade for the exam is more than 50 and if a number of completed projects is minimum 2.
 - 0, in other cases
 
-```
+```javascript
 function finalGrade (exam, projects) {
   return // final grade
 }
 ```
 
 Solution:
-```
+```javascript
 function finalGrade (exam, projects) {
   if(exam > 90 || projects>10){
     return 100;
@@ -249,14 +249,14 @@ function finalGrade (exam, projects) {
 Exercise:
 Remove all exclamation marks from the end of sentence.
 
-```
+```javascript
 function remove (string) {  
   return '';
 }
 ```
 
 Solution:
-```
+```javascript
 function remove (string) { 
   for(let i=string.length; i>0; i-- ){
     if(string.charAt(i-1)==='!'){
@@ -271,14 +271,14 @@ function remove (string) {
 Exercise:
 Create a function called shortcut to remove the lowercase vowels (a, e, i, o, u ) in a given string.
 
-```
+```javascript
 function shortcut (string) {
   return '';
 }
 ```
 
 Solution:
-```
+```javascript
 function shortcut (string) {
   string=string.replace(/a/g, '');
   string=string.replace(/e/g, '');
@@ -294,13 +294,13 @@ function shortcut (string) {
 Exercise:
 Let's play! You have to return which player won! In case of a draw return Draw!.
 
-```
+```javascript
 const rps = (p1, p2) => {
 };
 ```
 
 Solution:
-```
+```javascript
 const rps = (p1, p2) => {
   if((p1=='rock' && p2=='scissors' ) || (!(p1=='scissors' && p2=='rock') && p1.length > p2.length)){
     return "Player 1 won!";
@@ -317,14 +317,14 @@ const rps = (p1, p2) => {
 Exercise:
 Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
 
-```
+```javascript
 function persistence(num) {
    //code me
 }
 ```
 
 Solution:
-```
+```javascript
 let sum = 1;
 
 function persistence(num) {
@@ -364,14 +364,14 @@ For example, if a bottle cost £10 normally and the discount in duty free was 10
 
 All inputs will be integers. Please return an integer. Round down.
 
-```
+```javascript
 function dutyFree(normPrice, discount, hol){
 
 }
 ```
 
 Solution:
-```
+```javascript
 function dutyFree(normPrice, discount, hol){
   let percentage= normPrice* (discount/100);
   return Math.floor(hol/percentage);
@@ -388,14 +388,14 @@ current father's age (years)
 current age of his son (years)
 Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old).
 
-```
+```javascript
 function twiceAsOld(dadYearsOld, sonYearsOld) {
   // your code here
 }
 ```
 
 Solution:
-```
+```javascript
 function twiceAsOld(dadYearsOld, sonYearsOld) {
   return Math.abs(dadYearsOld-2*sonYearsOld)
 }
@@ -408,14 +408,14 @@ Your task is to write a function called valid_spacing() or validSpacing() which 
 
 For this kata, the definition of valid spacing is one space between words, and no leading or trailing spaces. Words can be any consecutive sequence of non space characters. Below are some examples of what the function should return:
 
-```
+```javascript
 function validSpacing(s) {
   // write your code here
 }
 ```
 
 Solution:
-```
+```javascript
 function validSpacing(s) {
   let myArray = s.split(" ");
   if(s==''){
@@ -437,14 +437,14 @@ function validSpacing(s) {
 Exercise:
 Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
 
-```
+```javascript
 function fakeBin(x){
 
 }
 ```
 
 Solution:
-```
+```javascript
 function fakeBin(x){
   x=x.replace(/1|2|3|4/g, '0')
   x=x.replace(/5|6|7|8|9/g, '1')
