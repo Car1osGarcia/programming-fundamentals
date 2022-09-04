@@ -280,13 +280,13 @@ var uniqueInOrder=function(iterable){
 Exercise:
 In this kata you have to write a method that folds a given array of integers by the middle x-times.
 
-```
+```javascript
 function foldArray(array, runs)
 {
 }
 ```
 Solution:
-```
+```javascript
 function foldArray(array, runs)
 {
   for(let i=0;i<runs; i++){
@@ -322,13 +322,13 @@ The first letter must be converted to its ASCII code.
 The second letter must be switched with the last letter
 Keepin' it simple: There are no special characters in the input.
 
-```
+```javascript
 var encryptThis = function(text) {
   // Implement me! :)
 }
 ```
 Solution:
-```
+```javascript
 var encryptThis = function(text) {
   return text.split(" ").map(a=>a.length==1?a.charCodeAt(0):a.length==2?a.charCodeAt(0)+a[1]:a.charCodeAt(0)+`${a[a.length-1]+a.substr(2,a.length-3)+a[1]}`).join(' ');
 }
