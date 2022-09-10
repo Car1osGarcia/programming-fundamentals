@@ -1,6 +1,6 @@
 <h1 align="center"> Typescript part 2</h1>
 <div align="center">
-    <img alt="computer" title="Computer" width="100%" src="https://cdn.thenewstack.io/media/2022/01/10b88c68-typescript-logo-1024x576.png" />
+    <img alt="computer" title="Computer" width="100%" src="https://cdn.thenewstack.io/media/2022/01/10b88c68-typescript-logo-1024X576.png" />
 </div>
 
 <br>
@@ -495,3 +495,186 @@ export function accum(s: string): string {
   return s.split('').map((letter,i)=> letter.toUpperCase() + letter.repeat(i).toLowerCase() ).join('-');
 }
 ```
+<br>
+
+### Valid Braces
+
+Exercise:
+Write a function that takes a string of braces, and determines if the order of the braces is valid. It should return true if the string is valid, and false if it's invalid.
+
+This Kata is similar to the Valid Parentheses Kata, but introduces new characters: brackets [], and curly braces {}.
+
+All input strings will be nonempty, and will only consist of parentheses, brackets and curly braces: ()[]{}.
+
+What is considered Valid?
+A string of braces is considered valid if all braces are matched with the correct brace.
+
+```typescript
+export function validBraces(braces: string): boolean {
+  //code here
+}
+```
+Solution:
+```typescript
+export function validBraces(braces: string): boolean {
+  let queue: string[]=[];
+  for(let i:number =0; i<braces.length ;i++){
+    if(braces[i]=='(' || braces[i]=='[' || braces[i]=='{'){
+      queue.push(braces[i]);
+    }else{
+      if(queue.length==0){
+        return false;
+      }else{
+        if((braces[i]==')' && queue[queue.length-1]=='(') || (braces[i]==']' && queue[queue.length-1]=='[') || (braces[i]=='}' && queue[queue.length-1]=='{')){
+          queue.pop();
+        }else{
+          return false;
+        }
+      }
+    }
+  }
+  return queue.length!=0 ? false : true;
+}
+```
+
+<br>
+
+### Tic-Tac-Toe
+
+Exercise:
+Implement a Tic-Tac-Toe (AKA: Noughts and crosses, Xs and Os) solver. The input to the solver function will be an array of length 9 representing the board. Output of the function will be the index of the desired move (0-8). You will always be X. You must make a valid move, and a winning move if available.
+
+The board is represented as an array with the following indexes:
+
+```
+ 0 | 1 | 2
+---+---+---
+ 3 | 4 | 5
+---+---+---
+ 6 | 7 | 8 
+ ```
+
+```typescript
+// returns index of move
+function solveTTT(board) {
+ 
+}
+```
+Solution:
+```typescript
+function solveTTT(board) {
+  
+  if(board[0]=='X' && board[1]=='X' && board[2]==''){
+    return 2;
+  }else if(board[0]=='' && board[1]=='X' && board[2]=='X'){
+    return 0;
+  }else if(board[0]=='X' && board[1]=='' && board[2]=='X'){
+    return 1;
+  }
+  
+  if(board[3]=='X' && board[4]=='X' && board[5]==''){
+    return 5;
+  }else if(board[3]=='' && board[4]=='X' && board[5]=='X'){
+    return 3;
+  }else if(board[3]=='X' && board[4]=='' && board[5]=='X'){
+    return 4;
+  }
+  
+  if(board[6]=='X' && board[7]=='X' && board[8]==''){
+    return 8;
+  }else if(board[6]=='' && board[7]=='X' && board[8]=='X'){
+    return 6;
+  }else if(board[6]=='X' && board[7]=='' && board[8]=='X'){
+    return 7;
+  }
+  
+  if(board[0]=='X' && board[3]=='X' && board[6]==''){
+    return 6;
+  }else if(board[0]=='' && board[3]=='X' && board[6]=='X'){
+    return 0;
+  }else if(board[0]=='X' && board[3]=='' && board[6]=='X'){
+    return 3;
+  }
+  
+  if(board[1]=='X' && board[4]=='X' && board[7]==''){
+    return 7;
+  }else if(board[1]=='' && board[4]=='X' && board[7]=='X'){
+    return 1;
+  }else if(board[1]=='X' && board[4]=='' && board[7]=='X'){
+    return 4;
+  }
+  
+  if(board[2]=='X' && board[5]=='X' && board[8]==''){
+    return 8;
+  }else if(board[2]=='' && board[5]=='X' && board[8]=='X'){
+    return 2;
+  }else if(board[2]=='X' && board[5]=='' && board[8]=='X'){
+    return 5;
+  }
+  
+  
+  if(board[0]=='X' && board[4]=='X' && board[8]==''){
+    return 8;
+  }else if(board[0]=='' && board[4]=='X' && board[8]=='X'){
+    return 0;
+  }else if(board[0]=='X' && board[4]=='' && board[8]=='X'){
+    return 4;
+  }
+  
+  if(board[2]=='X' && board[4]=='X' && board[6]==''){
+    return 6;
+  }else if(board[2]=='' && board[4]=='X' && board[6]=='X'){
+    return 2;
+  }else if(board[2]=='X' && board[4]=='' && board[6]=='X'){
+    return 4;
+  }
+  
+  let possibleBoard =[];
+  board.map((actual,i)=> actual==''? possibleBoard.push(i) : null );
+  
+  return possibleBoard[0];
+}
+```
+
+<br>
+
+### Tic-Tac-Toe-like table Generator
+
+Exercise:
+Do you have in mind the good old TicTacToe?
+
+Assuming that you get all the data in one array, you put a space around each value, | as a columns separator and multiple - as rows separator, with something like ["O", "X", " ", " ", "X", " ", "X", "O", " "] you should be returning this structure (inclusive of new lines):
+```
+ O | X |   
+-----------
+   | X |   
+-----------
+ X | O |
+```
+
+ Now, to spice up things a bit, we are going to expand our board well beyond a trivial 3 x 3 square and we will accept rectangles of big sizes, still all as a long linear array.
+
+```typescript
+function displayBoard(board, width){
+  //your code here
+}
+```
+Solution:
+```typescript
+function displayBoard(board, width){
+  //your code here
+  let str= "";
+  for(let i=0; i<board.length; i=i+width){
+    let newBoard=board.slice(i,i+width);
+    if(i!=0){
+      str+= '\n'+'-'.repeat(width*3+width-1)+'\n'
+    }
+    str+= ' '+newBoard.join(' | ')+' ';
+  }
+  return str;
+}
+```
+
+<br>
+
+
