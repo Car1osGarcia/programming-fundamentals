@@ -33,7 +33,7 @@ TypeScript is a superset of the JavaScript language that has a single open-sourc
 
 <br>
 
-# Day 3
+# Day 5
 ## Training with codewars 
 <br>
 
