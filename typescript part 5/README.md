@@ -1,6 +1,6 @@
 <h1 align="center"> Typescript part 5</h1>
 <div align="center">
-    <img alt="computer" title="Computer" width="100%" src="https://cdn.thenewstack.io/media/2022/01/10b88c68-typescript-logo-1024X576.png" />
+    <img alt="computer" title="Computer" width="100%" src="https://cdn.thenewstack.io/media/2022/01/10b88c68-typescript-logo-1024x576.png" />
 </div>
 
 <br>
@@ -32,6 +32,44 @@ TypeScript is a superset of the JavaScript language that has a single open-sourc
 3. Developer tooling support - TypeScript's compiler can run as a background process to support both incremental compilation and IDE integration such that you can more easily navigate, identify problems, inspect possibilities and refactor your codebase.
 
 <br>
+
+# Day 4
+## Mocke interview
+### Tell me a bit about yourself
+
+i´m a developer and also a science and systems engineering student who is in graduiting process developing a web page as a project. in this project i have used ReactJs/Tailwind, NodeJs and Mysql. i'm studing english at academia europea. i'm in a fundamentals bootcamp at core code and in the future i will look for a job as fullstack developer. 
+<br>
+
+### Hobbies
+i like to play soccer, do exercise and watch comedy videos.
+
+### How would you describe yourself in three words?
+curious, self-taught and proactive.
+
+### How do you see yourself in 5 years?
+In fact i would like to work as a senior web developer. and i would like to work as a freelance 
+to improve softskills and apply knowledge.
+
+### Why do you want to work at this company?
+They Partners with brands across high growth industry verticals.they offer competitive salaries and benefits, they want their people grow and develop both personally and professionally. They invest in the education of their team members.
+
+### What do you know about this company?
+i know that they work with international enterprises, they have an IT area and speak english is a requirement. they hire fullstack developers. 
+
+### Why are you interested in this position?
+i'm interested in this position because i have studied sciense andy sistem engeeniring i have completed some courses about this stack. I am self-taught, i always like to kwown more about technology.
+
+### Why are you the ideal candidate for this position?
+i have some experience in this area, i have worked with the tools that they use. i can communicate easyli with other people and i am a proactive person.
+
+### What is your biggest strength? 
+I think my greatest strength is being self-taught. If I don't know about a topic, I search and try to do it in the best way.
+
+### What is your biggest flaw - weakness?
+stay focused when there is noise
+
+### How much salary do you expect?
+i can say that a range could be 1500 - 2000 open to negociate.
 
 # Day 5
 ## Training with codewars 

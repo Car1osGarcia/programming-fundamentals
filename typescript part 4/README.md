@@ -1,6 +1,7 @@
 <h1 align="center"> Typescript part 4</h1>
 <div align="center">
-    <img alt="computer" title="Computer" width="100%" src="https://cdn.thenewstack.io/media/2022/01/10b88c68-typescript-logo-1024X576.png" />
+    <img alt="computer" title="Computer" width="100%" src="https://cdn.thenewstack.io/media/2022/01/10b88c68-typescript-logo-1024x576.png" />
+    
 </div>
 
 <br>

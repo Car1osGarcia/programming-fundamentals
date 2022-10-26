@@ -11,9 +11,14 @@
 2. [Javascript part 1](/Javascript%20part%201/README.md)
 3. [Javascript part 2](/Javascript%20part%202/README.md)
 4. [Javascript part 3](/Javascript%20part%203/README.md)
-5. [Typescript part 1](/Javascript%20part%202/README.md)
-6. [Typescript part 2](/Javascript%20part%202/README.md)
-7. [Typescript part 3](/Javascript%20part%202/README.md)
-8. [Typescript part 4](/Javascript%20part%202/README.md)
+5. [Typescript part 1](/Typescript%20part%201/README.md)
+6. [Typescript part 2](/Typescript%20part%202/README.md)
+7. [Typescript part 3](/Typescript%20part%203/README.md)
+8. [Typescript part 4](/Typescript%20part%204/README.md)
+9. [Typescript part 5](/Typescript%20part%205/README.md)
+10. [Typescript part 6](/Typescript%20part%206/README.md)
+11. [Nodejs part 1](/Nodejs%20part%201/README.md)
+12. [Nodejs part 2](/Nodejs%20part%202/README.md)
+13. [Nodejs part 3](/Nodejs%20part%203/README.md)
 
 
